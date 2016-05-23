@@ -11,6 +11,7 @@ import org.apache.spark.rdd.RDD
 import breeze.linalg._
 import breeze.math._
 import breeze.numerics
+import org.dmg.pmml.True
 
 
 object char_RNN {
@@ -26,12 +27,12 @@ object char_RNN {
     // map each character to a unique ID
 
     // convert input corpus to a sequence of words
-    val char_seq = input.flatMap(row => row.split(" ")).flatMap(word => word.toCharArray)
+    val char_seq = input.flatMap(word => word.toCharArray)
 
     // make vocabulary maps
     val vocab = char_seq.distinct.zipWithIndex
-    val char2id = vocab.collect.toMap
-    val id2char = vocab.map{case (char, id) => (id, char)}.collect.toMap
+    val char2id = vocab.map{case (char, id) => (char, id.toInt)}.collect.toMap
+    val id2char = vocab.map{case (char, id) => (id.toInt, char)}.collect.toMap
 
     // define and initialize model variables
     // basic and hyperparameters
@@ -139,6 +140,105 @@ object char_RNN {
       (loss, clip(dWxh), clip(dWhh), clip(dWhy), clip(dby), clip(dbh), ht(step_size-1))
     }
 
+    def transform(input: Int = 0,
+                  hprev: DenseVector[Double] = DenseVector.zeros[Double](hidden_dim),
+                  n: Int = seq_len) = {
+
+      // the transform function takes an input to kick-start RNN model in
+      // generating a sequence of output with specified length n.
+      // previous hidden state can be provided, or it will be default to zero
+      val out = new Array[Char](n)
+      var x = DenseVector.zeros[Double](vocab_size)
+      var h = hprev
+      x( input ) = 1.0
+      for (t <- 0 until n) yield {
+
+        // compute hidden layer value
+        h = breeze.numerics.tanh(Wxh * x + Whh * h + bh)
+
+        // compute output vector
+        val y = Why * h + by
+        val expy = breeze.numerics.exp(y)
+        val id = breeze.linalg.argmax(expy)
+        //out(t) = id2char(id)
+
+        // put current output as next input
+        x = DenseVector.zeros[Double](vocab_size)
+        x( id ) = 1.0
+
+        id2char(id)
+      }
+
+    }
+    
+
+    def fit() = {
+      // fit the given RNN model
+
+      // in this first version we serialize the training corpus
+      val corpus = char_seq.collect
+      val corpus_size = corpus.size
+      var cur = 0
+      var hprev = DenseVector.zeros[Double](hidden_dim)
+      var iter: Int = 0
+      var smoothloss: Double = -math.log(1.0 / vocab_size) * seq_len
+
+      // Adagrad parameters
+      var mWxh = DenseMatrix.zeros[Double](hidden_dim, vocab_size)
+      var mWhh = DenseMatrix.zeros[Double](hidden_dim, hidden_dim)
+      var mWhy = DenseMatrix.zeros[Double](vocab_size, hidden_dim)
+      var mbh = DenseVector.zeros[Double](hidden_dim)
+      var mby = DenseVector.zeros[Double](vocab_size)
+
+      // gradient descent parameter update subroutine with Adagrad
+      def update_param(dWxh: DenseMatrix[Double],
+                       dWhh: DenseMatrix[Double],
+                       dWhy: DenseMatrix[Double],
+                       dby: DenseVector[Double],
+                       dbh: DenseVector[Double]): Unit = {
+
+        mWxh += dWxh :* dWxh
+        mWhh += dWhh :* dWhh
+        mWhy += dWhy :* dWhy
+        mbh += dbh :* dbh
+        mby += dby :* dby
+
+        Wxh -= learn_rate * (dWxh :/ breeze.numerics.sqrt(mWxh + 1e-8))
+        Whh -= learn_rate * (dWhh :/ breeze.numerics.sqrt(mWhh + 1e-8))
+        Why -= learn_rate * (dWhy :/ breeze.numerics.sqrt(mWhy + 1e-8))
+        by -= learn_rate * (dby :/ breeze.numerics.sqrt(mby + 1e-8))
+        bh -= learn_rate * (dbh :/ breeze.numerics.sqrt(mbh + 1e-8))
+      }
+
+      // iterativesly train RNN model with fixed-size sequence
+      while (cur >= 0) { // artificial condition for infinite training loop
+        // reset training cycle when reaching end of corpus
+        if (cur+seq_len+1 > corpus_size) {
+          cur = 0
+          hprev = DenseVector.zeros[Double](hidden_dim)
+        }
+        //println(hprev)
+
+        //val endpt = min(cur+seq_len+1, corpus_size)
+        val inputs = corpus.slice(cur, cur+seq_len).map(char => char2id(char))
+        val targets = corpus.slice(cur+1, cur+seq_len+1).map(char => char2id(char))
+
+        // make a step in training
+        val (loss, dWxh, dWhh, dWhy, dby, dbh, h) = step(inputs, targets, hprev)
+
+        // update parameters
+        update_param(dWxh, dWhh, dWhy, dby, dbh)
+        smoothloss = 0.999 * smoothloss + 0.001 * loss
+        if (iter % 100 == 0) println(s"Training loss at iteration $iter: $smoothloss")
+
+        // update training cycle and memory
+        hprev = h
+        cur += seq_len
+        iter += 1
+      }
+
+    }
+
 
 
 
@@ -157,9 +257,12 @@ object char_RNN {
 
     // read input corpus
     val data = spark.textFile("min-char-rnn-test.txt")
-    //val word_seq = data.flatMap(row => row.split(" "))
+    val char_seq = data.flatMap(row => row.toCharArray)
+    //println(char_seq.take(10))
 
     val rnn = new char_RNN(data)
+    rnn.fit()
+    //println(rnn.transform(input = 0, n = 100).mkString(""))
 
     // make a dictionary from input document
     //val vocab = word_seq.distinct.zipWithIndex
