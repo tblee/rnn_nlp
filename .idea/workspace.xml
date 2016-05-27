@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="545df014-7ea6-4ee2-bfcb-e3f2f4078ce6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tiny_train_log_window.txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_para$char_RNN$$anonfun$4$$anonfun$apply$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_para$char_RNN$$anonfun$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_para$char_RNN$$anonfun$fit$1.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_para$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_para$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_para$char_RNN$$sample$1$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_para$char_RNN$$sample$1$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_para$char_RNN$$anonfun$transform$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_para$char_RNN$$anonfun$transform$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_para$char_RNN.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_para$char_RNN.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_para.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_para.class" />
+    <list default="true" id="545df014-7ea6-4ee2-bfcb-e3f2f4078ce6" name="Default" comment="2-layers RNN working">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_2layer.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_para.scala" afterPath="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_para.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN.scala" afterPath="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN.scala" />
     </list>
     <ignored path="rnn_nlp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,8 +47,8 @@
       <file leaf-file-name="char_RNN.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5076">
-              <caret line="288" column="3" selection-start-line="277" selection-start-column="2" selection-end-line="288" selection-end-column="3" />
+            <state relative-caret-position="342">
+              <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
               <folding>
                 <element signature="e#79#96#0" expanded="true" />
               </folding>
@@ -64,11 +56,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="char_RNN_para.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="char_RNN_2layer.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_2layer.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="557">
+              <caret line="326" column="17" selection-start-line="326" selection-start-column="17" selection-end-line="326" selection-end-column="17" />
+              <folding>
+                <element signature="e#79#96#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="char_RNN_para.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_para.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+            <state relative-caret-position="540">
+              <caret line="139" column="7" selection-start-line="139" selection-start-column="7" selection-end-line="139" selection-end-column="7" />
               <folding>
                 <element signature="e#79#96#0" expanded="true" />
               </folding>
@@ -81,7 +85,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
               <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="e#79#96#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -113,8 +119,9 @@
         <option value="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/shallowNN_Breeze.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/shallowNN_mllib.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/BreezeTest.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_para.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_2layer.scala" />
       </list>
     </option>
   </component>
@@ -238,7 +245,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$USER_HOME$/spark-1.6.1/assembly/target/scala-2.11/spark-assembly-1.6.1-hadoop2.4.0.jar!/" />
   </component>
-  <component name="RunManager" selected="Application.char_RNN_para">
+  <component name="RunManager" selected="Application.char_RNN_2layer">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -518,6 +525,21 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="false" name="char_RNN_2layer" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="org.apache.spark.shallowNN.char_RNN_2layer" />
+      <option name="VM_PARAMETERS" value="-Dspark.master=local[2]" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="rnn_nlp" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="false" name="MatrixTest" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="org.apache.spark.shallowNN.MatrixTest" />
@@ -593,12 +615,13 @@
       <envs />
       <method />
     </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.MatrixTest" />
-      <item index="1" class="java.lang.String" itemvalue="Application.shallowNN_mllib" />
-      <item index="2" class="java.lang.String" itemvalue="Application.BreezeTest" />
-      <item index="3" class="java.lang.String" itemvalue="Application.char_RNN" />
-      <item index="4" class="java.lang.String" itemvalue="Application.char_RNN_para" />
+    <list size="6">
+      <item index="0" class="java.lang.String" itemvalue="Application.char_RNN_2layer" />
+      <item index="1" class="java.lang.String" itemvalue="Application.MatrixTest" />
+      <item index="2" class="java.lang.String" itemvalue="Application.shallowNN_mllib" />
+      <item index="3" class="java.lang.String" itemvalue="Application.BreezeTest" />
+      <item index="4" class="java.lang.String" itemvalue="Application.char_RNN" />
+      <item index="5" class="java.lang.String" itemvalue="Application.char_RNN_para" />
     </list>
   </component>
   <component name="SbtLocalSettings">
@@ -694,6 +717,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="2-layers RNN working" />
+    <option name="LAST_COMMIT_MESSAGE" value="2-layers RNN working" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
@@ -735,7 +762,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#79#96#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -769,7 +798,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#79#96#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -803,7 +834,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#79#96#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -837,7 +870,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#79#96#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -871,7 +906,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#79#96#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -905,7 +942,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#79#96#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -939,7 +978,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#79#96#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -963,7 +1004,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="29" column="35" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="35" />
-          <folding />
+          <folding>
+            <element signature="e#79#96#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -996,16 +1039,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5076">
-          <caret line="288" column="3" selection-start-line="277" selection-start-column="2" selection-end-line="288" selection-end-column="3" />
           <folding>
-            <element signature="e#79#96#0" expanded="true" />
+            <element signature="e#79#96#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1020,8 +1055,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_para.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+        <state relative-caret-position="540">
+          <caret line="139" column="7" selection-start-line="139" selection-start-column="7" selection-end-line="139" selection-end-column="7" />
+          <folding>
+            <element signature="e#79#96#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <folding>
+            <element signature="e#79#96#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_2layer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="326" column="17" selection-start-line="326" selection-start-column="17" selection-end-line="326" selection-end-column="17" />
           <folding>
             <element signature="e#79#96#0" expanded="true" />
           </folding>
