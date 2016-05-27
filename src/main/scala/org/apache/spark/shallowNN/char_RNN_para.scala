@@ -19,7 +19,8 @@ object char_RNN_para {
                  hidden_dim_in: Int = 100,
                  seq_len_in: Int = 25,
                  learn_rate_in: Double = 0.1,
-                 lim_in: Double = 5.0) {
+                 lim_in: Double = 5.0)
+    extends Serializable{
 
     // Constructor of character RNN class
     // parse the input corpus and produce a vocabulary mapping to
@@ -44,8 +45,6 @@ object char_RNN_para {
     println(s"Input data has vocabulary size $vocab_size, " +
       s"initializing network with $hidden_dim hidden units")
 
-    // prepare training data as sliding windows
-    val char_train = char_seq.sliding(seq_len + 1).collect
 
     // initialize model parameters
     // define as Breeze matrices and vectors
@@ -142,7 +141,8 @@ object char_RNN_para {
 
       // clip gradient to prevent gradient vanishing or explosion
       // return loss, clipped gradient and the last hidden state
-      (loss, clip(dWxh), clip(dWhh), clip(dWhy), clip(dby), clip(dbh), ht(step_size-1))
+      //(loss, clip(dWxh), clip(dWhh), clip(dWhy), clip(dby), clip(dbh), ht(step_size-1))
+      (loss, clip(dWxh), clip(dWhh), clip(dWhy), clip(dby), clip(dbh), 1)
     }
 
     def transform(input: Int = 0,
@@ -245,21 +245,34 @@ object char_RNN_para {
       // given training dataset which consists of sliding windows of corpus
       // iteratively train the RNN model
 
+      /*
       def train_step(input_seq: Array[Int]) = {
         val (loss, dWxh, dWhh, dWhy, dby, dbh, h) = step(input_seq)
 
         // update parameters
         update_param(dWxh, dWhh, dWhy, dby, dbh)
         smoothloss = 0.999 * smoothloss + 0.001 * loss
-      }
+      } */
 
-      val train2id = char_train.map(window => window.map(c => char2id(c)))
-
+      // prepare training data as sliding windows
+      val train2id = char_seq.map(c => char2id(c)).sliding(seq_len + 1)
       var epoch = 0
-      while (epoch >= 0) {
-        train2id.map(window => train_step(window))
 
-        println(s"Training loss at epoch $epoch: $smoothloss")
+      // train loop to feed sliding window to RNN and update parameters
+      while (epoch >= 0) {
+        val gradients = train2id.map(window => step(window,
+          DenseVector.zeros[Double](hidden_dim))).reduce{
+          case (x, y) =>
+            (x._1 + y._1, x._2 + y._2, x._3 + y._3, x._4 + y._4, x._5 + y._5, x._6 + y._6, x._7 + y._7)
+        }
+
+        val (loss, dWxh, dWhh, dWhy, dby, dbh, count) = gradients
+        // update parameters
+        val ct = count.toDouble
+        update_param(dWxh / ct, dWhh / ct, dWhy / ct, dby / ct, dbh / ct)
+        smoothloss = 0.999 * smoothloss + 0.001 * (loss / ct)
+
+        println(s"Training loss at epoch $epoch: $loss")
         println(transform(0 , DenseVector.rand[Double](hidden_dim), 200).mkString("") + "\n")
 
         epoch += 1
@@ -271,12 +284,43 @@ object char_RNN_para {
   }
 
 
+
+  // ============== Test area ===================
+  /*
+  def seq2Int(input: RDD[String]) = {
+    val char_seq = input.flatMap(r => r.toCharArray)
+
+    def char2Int(c: Char) = c.toInt
+    val train = char_seq.map(c => char2Int(c))
+  }*/
+  /*
+  class testClass(data: RDD[String])
+    extends Serializable {
+
+    // constructor
+    val char_seq = data.flatMap(r => r.toCharArray)
+    val vocab = char_seq.distinct.zipWithIndex
+    val char2id = vocab.map{case (char, id) => (char, id.toInt)}.collect.toMap
+    val id2char = vocab.map{case (char, id) => (id.toInt, char)}.collect.toMap
+
+    val train = char_seq.map(c => char2id(c)).sliding(25)
+
+    println(train.take(1)(0).mkString(","))
+  }*/
+  // ============== Test area ===================
+
+
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf().setAppName("char_RNN")
     val spark = new SparkContext(conf)
 
     // read input corpus
     val data = spark.textFile("min-char-rnn-test-tiny.txt")
+
+    //val train = char_seq.map(c => char2Int(c)).sliding(25)
+    //println(train.take(1)(0).mkString(","))
+    //seq2Int(data)
+    //val test = new testClass(data)
 
     // create and fit char-RNN model with corpus
     val rnn = new char_RNN(data)
