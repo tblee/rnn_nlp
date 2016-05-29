@@ -26,7 +26,8 @@ object char_RNN {
     // map each character to a unique ID
 
     // convert input corpus to a sequence of words
-    val char_seq = input.flatMap(word => word.toCharArray)
+    val char_seq = input.flatMap(word => word.toCharArray) // train character model
+    //val char_seq = input.flatMap(row => row.split(" ")) // train word model
 
     // make vocabulary maps
     val vocab = char_seq.distinct.zipWithIndex

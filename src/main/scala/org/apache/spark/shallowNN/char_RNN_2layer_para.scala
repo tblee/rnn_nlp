@@ -324,13 +324,8 @@ object char_RNN_2layer_para {
           Array(DenseVector.rand[Double](hidden_dim), DenseVector.rand[Double](hidden_dim)), 200).mkString("") + "\n")
 
         epoch += 1
-
-
       }
-
-
     }
-
   }
 
 
