@@ -240,10 +240,6 @@ object char_RNN_2layer_para {
 
     def fit() = {
       // fit the given RNN model
-
-      // in this first version we serialize the training corpus
-      val corpus = char_seq.collect
-      val corpus_size = corpus.size
       var cur = 0
       var hprev = Array(DenseVector.zeros[Double](hidden_dim), DenseVector.zeros[Double](hidden_dim))
       var iter: Int = 0

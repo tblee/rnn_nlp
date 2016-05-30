@@ -16,10 +16,10 @@ import breeze.numerics
 object char_RNN {
 
   class char_RNN(val input: RDD[String],
-                 hidden_dim_in: Int = 100,
-                 seq_len_in: Int = 25,
-                 learn_rate_in: Double = 0.1,
-                 lim_in: Double = 5.0) {
+                 val hidden_dim: Int = 100,
+                 val seq_len: Int = 25,
+                 val learn_rate: Double = 0.1,
+                 val lim: Double = 5.0) {
 
     // Constructor of character RNN class
     // parse the input corpus and produce a vocabulary mapping to
@@ -37,10 +37,10 @@ object char_RNN {
     // define and initialize model variables
     // basic and hyperparameters
     val vocab_size: Int = vocab.count.toInt
-    val hidden_dim: Int = hidden_dim_in
-    val seq_len: Int = seq_len_in
-    val learn_rate: Double = learn_rate_in
-    val lim: Double = lim_in
+    //val hidden_dim: Int = hidden_dim_in
+    //val seq_len: Int = seq_len_in
+    //val learn_rate: Double = learn_rate_in
+    //val lim: Double = lim_in
     println(s"Input data has vocabulary size $vocab_size, " +
       s"initializing network with $hidden_dim hidden units")
 
@@ -281,7 +281,7 @@ object char_RNN {
     val spark = new SparkContext(conf)
 
     // read input corpus
-    val data = spark.textFile("min-char-rnn-test.txt")
+    val data = spark.textFile("min-char-rnn-test-tiny.txt")
 
     // create and fit char-RNN model with corpus
     val rnn = new char_RNN(data)
