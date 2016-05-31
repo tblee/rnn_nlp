@@ -291,12 +291,13 @@ object char_RNN_module {
     val spark = new SparkContext(conf)
 
     // read input corpus
-    val data = spark.textFile("min-char-rnn-test.txt")
+    //val data = spark.textFile("min-char-rnn-test.txt")
+    val data = spark.textFile("life_is_short.txt")
 
     // create and fit char-RNN model with corpus
     val rnn = new char_RNN(input = data,
       num_layers = 1,
-      hidden_dim = 25,
+      hidden_dim = 100,
       seq_len = 5,
       learn_rate = 0.1,
       lim = 5.0)
