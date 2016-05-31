@@ -26,6 +26,7 @@ object char_RNN_module {
     // parse the input corpus and produce a vocabulary mapping to
     // map each character to a unique ID
 
+
     // convert input corpus to a sequence of words
     val char_seq = input.flatMap(word => word.toCharArray)
 
@@ -40,7 +41,7 @@ object char_RNN_module {
 
     println(s"Input data has vocabulary size $vocab_size, " +
       s"initializing network with $num_layers layers " +
-      s"each has $hidden_dim hidden units")
+      s"each has $hidden_dim hidden units, sliding window size $seq_len")
 
     // initialize model parameters for modules
     var Win = Array.fill(num_layers){randGaussian(hidden_dim, vocab_size)}
@@ -275,9 +276,10 @@ object char_RNN_module {
         update_param(dWin.map(_ / ct), dWh.map(_ / ct), dWout.map(_ / ct), dbout.map(_ / ct), dbh.map(_ / ct))
         smoothloss = 0.999 * smoothloss + 0.001 * (loss / ct)
 
-        println(s"Training loss at epoch $epoch: $loss")
-        val h_kickoff = Array.fill(num_layers){DenseVector.rand[Double](hidden_dim)}
-        println(transform(0 , h_kickoff, 200).mkString("") + "\n")
+
+        println(s"Training loss at epoch $epoch: ${loss / (ct * seq_len)}")
+        //val h_kickoff = Array.fill(num_layers){DenseVector.rand[Double](hidden_dim)}
+        //println(transform(0 , h_kickoff, 200).mkString("") + "\n")
 
         epoch += 1
       }
@@ -297,9 +299,9 @@ object char_RNN_module {
     // create and fit char-RNN model with corpus
     val rnn = new char_RNN(input = data,
       num_layers = 1,
-      hidden_dim = 100,
-      seq_len = 5,
-      learn_rate = 0.1,
+      hidden_dim = 25,
+      seq_len = 25,
+      learn_rate = 0.2,
       lim = 5.0)
     rnn.fit()
 

@@ -33,13 +33,17 @@ object char_RNN_dist_para {
     val char2id = vocab.map{case (char, id) => (char, id.toInt)}.collect.toMap
     val id2char = vocab.map{case (char, id) => (id.toInt, char)}.collect.toMap
 
+    // construct evaluation seqence
+    val eval_len = 51
+    val eval_seq = char_seq.take(eval_len).map(c => char2id(c))
+
     // define and initialize model variables
     // basic and hyperparameters
     val vocab_size: Int = vocab.count.toInt
 
     println(s"Input data has vocabulary size $vocab_size, " +
       s"initializing network with $num_layers layers " +
-      s"each has $hidden_dim hidden units")
+      s"each has $hidden_dim hidden units, training batch size $seq_len")
 
     // initialize model parameters for modules
     var Win = Array.fill(num_layers){randGaussian(hidden_dim, vocab_size)}
@@ -135,10 +139,71 @@ object char_RNN_dist_para {
 
     }
 
+    /*
+    def evaluate(input: Int = 0,
+                 targets: Array[Int],
+                 hprev: Array[DenseVector[Double]],
+                 offset: Int = 10): Double = {
+
+      // helper function to take sample from a prob distribution
+      def sample(dist: DenseVector[Double]): Int = {
+
+        // assume the input distribution vector has length = vocab_size
+        val accu = new Array[Double](vocab_size)
+        accu(0) = dist(0)
+        for (i <- 1 until vocab_size) accu(i) = accu(i-1) + dist(i)
+
+        def bSearch(l: Int, r: Int, target: Float): Int = {
+          if (target >= accu(r-1)) r
+          else if (target < accu(l+1)) l+1
+          else {
+            val mid = (l + r) / 2
+            if (target < accu(mid)) bSearch(l, mid, target)
+            else bSearch(mid, r, target)
+          }
+        }
+
+        // use binary search to find sampled id
+        val d = Random.nextFloat()
+        if (d <= accu(0)) 0
+        else if (d >= accu(vocab_size-1)) vocab_size - 1
+        else bSearch(0, vocab_size-1, d)
+      }
+
+
+
+      // feed a standard input after each training epoch to evaluate model performance
+      val n = targets.size
+      var loss = 0.0
+
+      var x = DenseVector.zeros[Double](vocab_size)
+      val h = hprev
+      x( input ) = 1.0
+      for (t <- 0 until n) {
+
+        // forward pass with layer modules
+        for (layer <- 0 until num_layers) {
+          h(layer) = breeze.numerics.tanh(Win(layer) * x + Wh(layer) * h(layer) + bh(layer))
+          x = Wout(layer) * h(layer) + bout(layer)
+        }
+        val expy = breeze.numerics.exp(x)
+        val p = expy / breeze.linalg.sum(expy)
+        val id = sample(p)
+        //val id = breeze.linalg.argmax(expy)
+
+        // put current output as next input
+        x = DenseVector.zeros[Double](vocab_size)
+        x( id ) = 1.0
+
+        // ignore the first offset characters
+        if (t >= offset) loss += -math.log( p(targets(t)) )
+      }
+
+      loss
+    }
+    */
 
     def fit() = {
-
-
 
       // training subroutine for paragraph input
       def train_paragraph(train: Array[Int]) = {
@@ -157,16 +222,6 @@ object char_RNN_dist_para {
         val mWout_p = mWout.map(_.copy)
         val mbout_p = mbout.map(_.copy)
         val mbh_p = mbh.map(_.copy)
-
-
-
-        // Adagrad parameters for current paragraph
-        /*
-        val mWin = Array.fill(num_layers){DenseMatrix.zeros[Double](hidden_dim, vocab_size)}
-        val mWh = Array.fill(num_layers){DenseMatrix.zeros[Double](hidden_dim, hidden_dim)}
-        val mWout = Array.fill(num_layers){DenseMatrix.zeros[Double](vocab_size, hidden_dim)}
-        val mbh = Array.fill(num_layers){DenseVector.zeros[Double](hidden_dim)}
-        val mbout = Array.fill(num_layers){DenseVector.zeros[Double](vocab_size)} */
 
         // gradient descent parameter update subroutine with Adagrad
         def update_param(dWin: Array[DenseMatrix[Double]],
@@ -281,9 +336,6 @@ object char_RNN_dist_para {
         }
 
 
-
-
-
         // parameters for current paragraph
         var cur = 0
         var hprev = Array.fill(num_layers){ DenseVector.zeros[Double](hidden_dim) }
@@ -307,46 +359,6 @@ object char_RNN_dist_para {
           cur += s_len
           hprev = h
         }
-
-
-        ///////////////////////////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////////////////////////
-        /*
-        // iterativesly train RNN model with fixed-size sequence
-        while (cur >= 0) { // artificial condition for infinite training loop
-          // reset training cycle when reaching end of corpus
-          if (cur+seq_len+1 > corpus_size) {
-            cur = 0
-            hprev = DenseVector.zeros[Double](hidden_dim)
-          }
-          //println(hprev)
-
-          //val endpt = min(cur+seq_len+1, corpus_size)
-          val inputs = corpus.slice(cur, cur+seq_len).map(char => char2id(char))
-          val targets = corpus.slice(cur+1, cur+seq_len+1).map(char => char2id(char))
-
-          // make a step in training
-          val (loss, dWxh, dWhh, dWhy, dby, dbh, h) = step(inputs, targets, hprev)
-
-          // update parameters
-          update_param(dWxh, dWhh, dWhy, dby, dbh)
-          smoothloss = 0.999 * smoothloss + 0.001 * loss
-
-          // with certain checkpoint, output current loss and and example paragraph
-          // generated by the RNN model
-          if (iter % 100 == 0) {
-            println(s"Training loss at iteration $iter: $smoothloss")
-            println(transform(char2id(corpus(cur)), hprev, 200).mkString("") + "\n")
-          }
-
-          // update training cycle and memory
-          hprev = h
-          cur += seq_len
-          iter += 1
-        } */
-        ///////////////////////////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////////////////////////
-
 
         // return paragraph parameters for average
         (totalloss, Win_p, Wh_p, Wout_p, bout_p, bh_p,
@@ -397,53 +409,12 @@ object char_RNN_dist_para {
 
         println(s"Training loss at epoch $epoch: ${loss / len}")
         val h_kickoff = Array.fill(num_layers){DenseVector.rand[Double](hidden_dim)}
-        println(transform(0 , h_kickoff, 200).mkString("") + "\n")
+        println(transform(0 , h_kickoff, 500).mkString("") + "\n")
 
         // increment epoch
         epoch += 1
       }
 
-
-
-
-
-
-      //////// Sliding window gradient descent training
-      /*
-      // prepare training data as sliding windows
-      val train2id = char_seq.map(c => char2id(c)).sliding(seq_len + 1)
-      var epoch = 0
-
-      // train loop to feed sliding window to RNN and update parameters
-      // training with gradient descent, in each epoch, every sliding window is taken to calculate
-      // gradient and an average gradient is obtained and used to update parameters after each epoch.
-
-      while (epoch >= 0) {
-        val h_init = Array.fill(num_layers){DenseVector.zeros[Double](hidden_dim)}
-        val gradient_seq = train2id.map(window => step(window, h_init))
-        val gradients = gradient_seq.reduce{
-          case (x, y) =>
-            (x._1 + y._1,
-              (x._2).zip(y._2).map{case (a, b) => a + b},
-              (x._3).zip(y._3).map{case (a, b) => a + b},
-              (x._4).zip(y._4).map{case (a, b) => a + b},
-              (x._5).zip(y._5).map{case (a, b) => a + b},
-              (x._6).zip(y._6).map{case (a, b) => a + b}, x._7 + y._7)
-        }
-
-        val (loss, dWin, dWh, dWout, dbout, dbh, count) = gradients
-
-        // update parameters
-        val ct = count.toDouble
-        update_param(dWin.map(_ / ct), dWh.map(_ / ct), dWout.map(_ / ct), dbout.map(_ / ct), dbh.map(_ / ct))
-        smoothloss = 0.999 * smoothloss + 0.001 * (loss / ct)
-
-        println(s"Training loss at epoch $epoch: $loss")
-        val h_kickoff = Array.fill(num_layers){DenseVector.rand[Double](hidden_dim)}
-        println(transform(0 , h_kickoff, 200).mkString("") + "\n")
-
-        epoch += 1
-      } */
     }
   }
 
@@ -455,12 +426,12 @@ object char_RNN_dist_para {
 
     // read input corpus
     //val data = spark.textFile("min-char-rnn-test.txt")
-    val data = spark.textFile("life_is_short.txt")
+    val data = spark.textFile("life_is_short-tiny.txt")
 
     // create and fit char-RNN model with corpus
     val rnn = new char_RNN(input = data,
-      num_layers = 2,
-      hidden_dim = 25,
+      num_layers = 1,
+      hidden_dim = 100,
       seq_len = 25,
       learn_rate = 0.1,
       lim = 5.0)
