@@ -18,7 +18,8 @@ object char_RNN_dist_para {
                  val hidden_dim: Int = 25,
                  val seq_len: Int = 25,
                  val learn_rate: Double = 0.1,
-                 val lim: Double = 5.0)
+                 val lim: Double = 5.0,
+                 val iter: Int = 1)
     extends Serializable {
 
     // Constructor of character RNN class
@@ -206,7 +207,7 @@ object char_RNN_dist_para {
     def fit() = {
 
       // training subroutine for paragraph input
-      def train_paragraph(train: Array[Int]) = {
+      def train_paragraph(train: Array[Int], step_iter: Int = 1) = {
 
         // setup parameters for current training paragraph
         // copy by value
@@ -336,32 +337,42 @@ object char_RNN_dist_para {
         }
 
 
-        // parameters for current paragraph
-        var cur = 0
-        var hprev = Array.fill(num_layers){ DenseVector.zeros[Double](hidden_dim) }
+        // sequentially train current paragraph for $iter iterations
         val s_len = math.min(seq_len, train.size -1)
         var totalloss = 0.0
-        //var smoothloss: Double = -math.log(1.0 / vocab_size) * seq_len
 
-        // traverse through the paragraph
-        while (cur + s_len < train.size - 1) {
-          val inputs = train.slice(cur, cur + s_len + 1)
-          //val targets = train.slice(cur + 1, cur + s_len + 1)
+        for (it <- 0 until iter) {
+          // parameters for current paragraph
+          var cur = 0
+          var hprev = Array.fill(num_layers){ DenseVector.zeros[Double](hidden_dim) }
+          //var smoothloss: Double = -math.log(1.0 / vocab_size) * seq_len
 
-          // single training step
-          val (loss, dWin, dWh, dWout, dbout, dbh, h) = step(inputs, hprev)
+          // traverse through the paragraph
+          while (cur + s_len < train.size - 1) {
+            val inputs = train.slice(cur, cur + s_len + 1)
+            //val targets = train.slice(cur + 1, cur + s_len + 1)
 
-          // update parameter and loss for current paragraph
-          update_param(dWin, dWh, dWout, dbout, dbh)
-          totalloss += loss
+            // single training step
+            val (loss, dWin, dWh, dWout, dbout, dbh, h) = step(inputs, hprev)
 
-          // loop increment
-          cur += s_len
-          hprev = h
+            // update parameter and loss for current paragraph
+            update_param(dWin, dWh, dWout, dbout, dbh)
+
+            // accumulate loss only in the first iteration to reflect the
+            // training result in last epoch
+            if (it <= 0) totalloss += loss
+
+            // loop increment
+            cur += s_len
+            hprev = h
+          }
         }
 
+
+
+
         // return paragraph parameters for average
-        (totalloss, Win_p, Wh_p, Wout_p, bout_p, bh_p,
+        (totalloss , Win_p, Wh_p, Wout_p, bout_p, bh_p,
           mWin_p, mWh_p, mWout_p, mbout_p, mbh_p, train.size, 1)
       }
 
@@ -370,7 +381,7 @@ object char_RNN_dist_para {
       // training parameters
       var epoch = 0
       var hprev = DenseVector.zeros[Double](hidden_dim)
-      var iter: Int = 0
+      //var iter: Int = 0
       //var smoothloss: Double = -math.log(1.0 / vocab_size) * seq_len
 
       // prepare paragraph RDD for training
@@ -408,8 +419,8 @@ object char_RNN_dist_para {
         mbh = mbh_n.map(_ / ct)
 
         println(s"Training loss at epoch $epoch: ${loss / len}")
-        val h_kickoff = Array.fill(num_layers){DenseVector.rand[Double](hidden_dim)}
-        println(transform(0 , h_kickoff, 500).mkString("") + "\n")
+        //val h_kickoff = Array.fill(num_layers){DenseVector.rand[Double](hidden_dim)}
+        //println(transform(0 , h_kickoff, 500).mkString("") + "\n")
 
         // increment epoch
         epoch += 1
@@ -426,7 +437,7 @@ object char_RNN_dist_para {
 
     // read input corpus
     //val data = spark.textFile("min-char-rnn-test.txt")
-    val data = spark.textFile("life_is_short-tiny.txt")
+    val data = spark.textFile("life_is_short.txt")
 
     // create and fit char-RNN model with corpus
     val rnn = new char_RNN(input = data,
@@ -434,7 +445,8 @@ object char_RNN_dist_para {
       hidden_dim = 100,
       seq_len = 25,
       learn_rate = 0.1,
-      lim = 5.0)
+      lim = 5.0,
+      iter = 4)
     rnn.fit()
 
   }

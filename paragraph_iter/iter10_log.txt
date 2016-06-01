@@ -1,0 +1,139 @@
+/usr/lib/jvm/java-8-oracle/bin/java -Dspark.master=local[2] -Didea.launcher.port=7533 -Didea.launcher.bin.path=/home/tblee/idea-IC/bin -Dfile.encoding=UTF-8 -classpath "/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/deploy.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/jfxrt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-oracle/jre/lib/javaws.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfxswt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar:/usr/lib/jvm/java-8-oracle/jre/lib/plugin.jar:/usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/media/tblee/Data/Stanford courses/Spring 2016/CME323/Project/rnn_nlp/target/scala-2.11/classes:/home/tblee/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar:/home/tblee/spark-1.6.1/assembly/target/scala-2.11/spark-assembly-1.6.1-hadoop2.4.0.jar:/home/tblee/idea-IC/lib/idea_rt.jar" com.intellij.rt.execution.application.AppMain org.apache.spark.shallowNN.char_RNN_dist_para
+Using Spark's repl log4j profile: org/apache/spark/log4j-defaults-repl.properties
+To adjust logging level use sc.setLogLevel("INFO")
+16/06/01 00:13:44 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/06/01 00:13:44 WARN Utils: Your hostname, tblee-UX303LB resolves to a loopback address: 127.0.1.1; using 10.0.0.6 instead (on interface wlan0)
+16/06/01 00:13:44 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Input data has vocabulary size 66, initializing network with 1 layers each has 100 hidden units, training batch size 25
+16/06/01 00:13:49 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+16/06/01 00:13:49 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+Training loss at epoch 0: 6.467291870373055
+[Stage 10:=============================>                            (1 + 1) / 2]Training loss at epoch 1: 2.9219279434825887
+Training loss at epoch 2: 2.5216511554221945
+Training loss at epoch 3: 2.315965236873526
+Training loss at epoch 4: 2.2348978664827968
+[Stage 14:=============================>                            (1 + 1) / 2]Training loss at epoch 5: 2.1821583978120223
+[Stage 15:=============================>                            (1 + 1) / 2]Training loss at epoch 6: 2.138292421917666
+Training loss at epoch 7: 2.101923886146873
+[Stage 17:=============================>                            (1 + 1) / 2]Training loss at epoch 8: 2.077317147299415
+[Stage 18:=============================>                            (1 + 1) / 2]Training loss at epoch 9: 2.0557756744038165
+[Stage 19:=============================>                            (1 + 1) / 2]Training loss at epoch 10: 2.039251269350783
+[Stage 20:=============================>                            (1 + 1) / 2]Training loss at epoch 11: 2.017794108008707
+Training loss at epoch 12: 2.002124836733948
+Training loss at epoch 13: 1.9810373684780547
+[Stage 23:=============================>                            (1 + 1) / 2]Training loss at epoch 14: 1.9629502714735025
+Training loss at epoch 15: 1.9558392889680891
+Training loss at epoch 16: 1.9342665550397447
+Training loss at epoch 17: 1.922894428990373
+Training loss at epoch 18: 1.9031330233766846
+[Stage 28:=============================>                            (1 + 1) / 2]Training loss at epoch 19: 1.891786086151926
+[Stage 29:=============================>                            (1 + 1) / 2]Training loss at epoch 20: 1.8775201850346452
+Training loss at epoch 21: 1.8655109452891234
+[Stage 31:=============================>                            (1 + 1) / 2]Training loss at epoch 22: 1.8523711919321497
+Training loss at epoch 23: 1.8424637153419445
+[Stage 33:=============================>                            (1 + 1) / 2]Training loss at epoch 24: 1.8353023428564124
+[Stage 34:=============================>                            (1 + 1) / 2]Training loss at epoch 25: 1.824307183276037
+Training loss at epoch 26: 1.8176723818040292
+[Stage 36:=============================>                            (1 + 1) / 2]Training loss at epoch 27: 1.805926547663929
+Training loss at epoch 28: 1.7998751626131952
+Training loss at epoch 29: 1.79063182237987
+Training loss at epoch 30: 1.781484163341246
+[Stage 40:=============================>                            (1 + 1) / 2]Training loss at epoch 31: 1.7724334581850962
+Training loss at epoch 32: 1.7670020681757657
+[Stage 42:=============================>                            (1 + 1) / 2]Training loss at epoch 33: 1.7631031975294258
+Training loss at epoch 34: 1.75985300531245
+[Stage 44:=============================>                            (1 + 1) / 2]Training loss at epoch 35: 1.751785796345434
+Training loss at epoch 36: 1.7470903598667589
+Training loss at epoch 37: 1.7444713292600498
+Training loss at epoch 38: 1.7414374395456378
+Training loss at epoch 39: 1.7340289930925596
+[Stage 49:=============================>                            (1 + 1) / 2]Training loss at epoch 40: 1.7316503272343562
+Training loss at epoch 41: 1.7244997485931508
+Training loss at epoch 42: 1.7194550826267196
+Training loss at epoch 43: 1.7148085955751866
+Training loss at epoch 44: 1.7103903181930116
+Training loss at epoch 45: 1.7073991066631118
+[Stage 55:=============================>                            (1 + 1) / 2]Training loss at epoch 46: 1.701950499000877
+Training loss at epoch 47: 1.6980645454801824
+Training loss at epoch 48: 1.6967733217953818
+[Stage 58:=============================>                            (1 + 1) / 2]Training loss at epoch 49: 1.6927781745832617
+Training loss at epoch 50: 1.6893092206015472
+[Stage 60:=============================>                            (1 + 1) / 2]Training loss at epoch 51: 1.6838159652825861
+Training loss at epoch 52: 1.6786643865292095
+[Stage 62:=============================>                            (1 + 1) / 2]Training loss at epoch 53: 1.6720154949142123
+Training loss at epoch 54: 1.664717320894993
+Training loss at epoch 55: 1.6605476789084783
+[Stage 65:=============================>                            (1 + 1) / 2]Training loss at epoch 56: 1.6581772497333334
+Training loss at epoch 57: 1.6516038756527676
+[Stage 67:=============================>                            (1 + 1) / 2]Training loss at epoch 58: 1.651778095638493
+Training loss at epoch 59: 1.6478969967041468
+[Stage 69:=============================>                            (1 + 1) / 2]Training loss at epoch 60: 1.642132655773751
+Training loss at epoch 61: 1.6356611886002677
+[Stage 71:=============================>                            (1 + 1) / 2]Training loss at epoch 62: 1.6279705372023114
+Training loss at epoch 63: 1.6206026789816796
+[Stage 73:=============================>                            (1 + 1) / 2]Training loss at epoch 64: 1.6132885862682176
+Training loss at epoch 65: 1.6063156114219546
+Training loss at epoch 66: 1.6016045993901884
+Training loss at epoch 67: 1.5984733233462247
+[Stage 77:=============================>                            (1 + 1) / 2]Training loss at epoch 68: 1.5945515379270259
+Training loss at epoch 69: 1.591361231477928
+Training loss at epoch 70: 1.588159520889003
+[Stage 80:=============================>                            (1 + 1) / 2]Training loss at epoch 71: 1.5824507812996205
+[Stage 81:=============================>                            (1 + 1) / 2]Training loss at epoch 72: 1.5788951757808012
+[Stage 82:=============================>                            (1 + 1) / 2]Training loss at epoch 73: 1.575054038040563
+[Stage 83:=============================>                            (1 + 1) / 2]Training loss at epoch 74: 1.5702975059606756
+Training loss at epoch 75: 1.5652508447861777
+Training loss at epoch 76: 1.5615950481887189
+[Stage 86:=============================>                            (1 + 1) / 2]Training loss at epoch 77: 1.5574865773856987
+Training loss at epoch 78: 1.5546267286610647
+Training loss at epoch 79: 1.5503970356759957
+[Stage 89:=============================>                            (1 + 1) / 2]Training loss at epoch 80: 1.5456191746740355
+[Stage 90:=============================>                            (1 + 1) / 2]Training loss at epoch 81: 1.5432941141110978
+[Stage 91:=============================>                            (1 + 1) / 2]Training loss at epoch 82: 1.5419077227161209
+[Stage 92:=============================>                            (1 + 1) / 2]Training loss at epoch 83: 1.537221388479865
+[Stage 93:=============================>                            (1 + 1) / 2]Training loss at epoch 84: 1.5353190555540943
+[Stage 94:>                                                         (0 + 2) / 2]Exception in thread "main" org.apache.spark.SparkException: Job 90 cancelled because SparkContext was shut down
+	at org.apache.spark.scheduler.DAGScheduler$$anonfun$cleanUpAfterSchedulerStop$1.apply(DAGScheduler.scala:806)
+	at org.apache.spark.scheduler.DAGScheduler$$anonfun$cleanUpAfterSchedulerStop$1.apply(DAGScheduler.scala:804)
+	at scala.collection.mutable.HashSet.foreach(HashSet.scala:78)
+	at org.apache.spark.scheduler.DAGScheduler.cleanUpAfterSchedulerStop(DAGScheduler.scala:804)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onStop(DAGScheduler.scala:1658)
+	at org.apache.spark.util.EventLoop.stop(EventLoop.scala:84)
+	at org.apache.spark.scheduler.DAGScheduler.stop(DAGScheduler.scala:1581)
+	at org.apache.spark.SparkContext$$anonfun$stop$9.apply$mcV$sp(SparkContext.scala:1740)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1229)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:1739)
+	at org.apache.spark.SparkContext$$anonfun$3.apply$mcV$sp(SparkContext.scala:596)
+	at org.apache.spark.util.SparkShutdownHook.run(ShutdownHookManager.scala:267)
+	at org.apache.spark.util.SparkShutdownHookManager$$anonfun$runAll$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(ShutdownHookManager.scala:239)
+	at org.apache.spark.util.SparkShutdownHookManager$$anonfun$runAll$1$$anonfun$apply$mcV$sp$1.apply(ShutdownHookManager.scala:239)
+	at org.apache.spark.util.SparkShutdownHookManager$$anonfun$runAll$1$$anonfun$apply$mcV$sp$1.apply(ShutdownHookManager.scala:239)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1765)
+	at org.apache.spark.util.SparkShutdownHookManager$$anonfun$runAll$1.apply$mcV$sp(ShutdownHookManager.scala:239)
+	at org.apache.spark.util.SparkShutdownHookManager$$anonfun$runAll$1.apply(ShutdownHookManager.scala:239)
+	at org.apache.spark.util.SparkShutdownHookManager$$anonfun$runAll$1.apply(ShutdownHookManager.scala:239)
+	at scala.util.Try$.apply(Try.scala:192)
+	at org.apache.spark.util.SparkShutdownHookManager.runAll(ShutdownHookManager.scala:239)
+	at org.apache.spark.util.SparkShutdownHookManager$$anon$2.run(ShutdownHookManager.scala:218)
+	at org.apache.hadoop.util.ShutdownHookManager$1.run(ShutdownHookManager.java:54)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:620)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:1832)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:1952)
+	at org.apache.spark.rdd.RDD$$anonfun$reduce$1.apply(RDD.scala:1025)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:150)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:111)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:316)
+	at org.apache.spark.rdd.RDD.reduce(RDD.scala:1007)
+	at org.apache.spark.shallowNN.char_RNN_dist_para$char_RNN.fit(char_RNN_dist_para.scala:392)
+	at org.apache.spark.shallowNN.char_RNN_dist_para$.main(char_RNN_dist_para.scala:450)
+	at org.apache.spark.shallowNN.char_RNN_dist_para.main(char_RNN_dist_para.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
+16/06/01 00:29:18 ERROR LiveListenerBus: SparkListenerBus has already stopped! Dropping event SparkListenerStageCompleted(org.apache.spark.scheduler.StageInfo@55072110)
+16/06/01 00:29:18 ERROR LiveListenerBus: SparkListenerBus has already stopped! Dropping event SparkListenerJobEnd(90,1464766158822,JobFailed(org.apache.spark.SparkException: Job 90 cancelled because SparkContext was shut down))
+
+Process finished with exit code 130
+

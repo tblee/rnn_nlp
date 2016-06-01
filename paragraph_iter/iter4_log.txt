@@ -1,0 +1,259 @@
+/usr/lib/jvm/java-8-oracle/bin/java -Dspark.master=local[2] -Didea.launcher.port=7532 -Didea.launcher.bin.path=/home/tblee/idea-IC/bin -Dfile.encoding=UTF-8 -classpath "/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/deploy.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/jfxrt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-oracle/jre/lib/javaws.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfxswt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar:/usr/lib/jvm/java-8-oracle/jre/lib/plugin.jar:/usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/media/tblee/Data/Stanford courses/Spring 2016/CME323/Project/rnn_nlp/target/scala-2.11/classes:/home/tblee/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar:/home/tblee/spark-1.6.1/assembly/target/scala-2.11/spark-assembly-1.6.1-hadoop2.4.0.jar:/home/tblee/idea-IC/lib/idea_rt.jar" com.intellij.rt.execution.application.AppMain org.apache.spark.shallowNN.char_RNN_dist_para
+Using Spark's repl log4j profile: org/apache/spark/log4j-defaults-repl.properties
+To adjust logging level use sc.setLogLevel("INFO")
+16/06/01 00:56:01 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/06/01 00:56:02 WARN Utils: Your hostname, tblee-UX303LB resolves to a loopback address: 127.0.1.1; using 10.0.0.6 instead (on interface wlan0)
+16/06/01 00:56:02 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Input data has vocabulary size 66, initializing network with 1 layers each has 100 hidden units, training batch size 25
+16/06/01 00:56:06 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+16/06/01 00:56:06 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+Training loss at epoch 0: 6.356487778827803
+Training loss at epoch 1: 2.9410980555675863
+[Stage 11:=============================>                            (1 + 1) / 2]Training loss at epoch 2: 2.6997384996419127
+Training loss at epoch 3: 2.4932449186092374
+[Stage 13:=============================>                            (1 + 1) / 2]Training loss at epoch 4: 2.3817892850085784
+Training loss at epoch 5: 2.3163134532833434
+[Stage 15:=============================>                            (1 + 1) / 2]Training loss at epoch 6: 2.267856265052726
+Training loss at epoch 7: 2.227823237293138
+Training loss at epoch 8: 2.192980132992893
+Training loss at epoch 9: 2.1637561664072202
+[Stage 19:=============================>                            (1 + 1) / 2]Training loss at epoch 10: 2.1355530959053626
+[Stage 20:=============================>                            (1 + 1) / 2]Training loss at epoch 11: 2.1142341352780547
+Training loss at epoch 12: 2.093554071974569
+Training loss at epoch 13: 2.0738450276376215
+[Stage 23:=============================>                            (1 + 1) / 2]Training loss at epoch 14: 2.058072727753035
+[Stage 24:=============================>                            (1 + 1) / 2]Training loss at epoch 15: 2.04090821528787
+[Stage 25:=============================>                            (1 + 1) / 2]Training loss at epoch 16: 2.0249348366749342
+Training loss at epoch 17: 2.0132134459298685
+Training loss at epoch 18: 2.0029122065531495
+Training loss at epoch 19: 1.9926347447035395
+[Stage 29:=============================>                            (1 + 1) / 2]Training loss at epoch 20: 1.9843130558996414
+[Stage 30:=============================>                            (1 + 1) / 2]Training loss at epoch 21: 1.9729739226508147
+Training loss at epoch 22: 1.9642732883139988
+[Stage 32:=============================>                            (1 + 1) / 2]Training loss at epoch 23: 1.955215166041753
+[Stage 33:=============================>                            (1 + 1) / 2]Training loss at epoch 24: 1.9450924498801607
+[Stage 34:=============================>                            (1 + 1) / 2]Training loss at epoch 25: 1.936081527899449
+Training loss at epoch 26: 1.9266941315290904
+Training loss at epoch 27: 1.9199297942473603
+[Stage 37:=============================>                            (1 + 1) / 2]Training loss at epoch 28: 1.9114544725643003
+[Stage 38:=============================>                            (1 + 1) / 2]Training loss at epoch 29: 1.9020606611542596
+[Stage 39:=============================>                            (1 + 1) / 2]Training loss at epoch 30: 1.8927300055731837
+[Stage 40:=============================>                            (1 + 1) / 2]Training loss at epoch 31: 1.8823640478267243
+[Stage 41:=============================>                            (1 + 1) / 2]Training loss at epoch 32: 1.8731622621096151
+[Stage 42:=============================>                            (1 + 1) / 2]Training loss at epoch 33: 1.8645235542767837
+[Stage 43:=============================>                            (1 + 1) / 2]Training loss at epoch 34: 1.8561979535937838
+[Stage 44:=============================>                            (1 + 1) / 2]Training loss at epoch 35: 1.8486196439425227
+[Stage 45:=============================>                            (1 + 1) / 2]Training loss at epoch 36: 1.839645837440904
+[Stage 46:>                                                         (0 + 2) / 2]Training loss at epoch 37: 1.8321408558148706
+[Stage 47:=============================>                            (1 + 1) / 2]Training loss at epoch 38: 1.8238733683572501
+Training loss at epoch 39: 1.8171108968845346
+[Stage 49:=============================>                            (1 + 1) / 2]Training loss at epoch 40: 1.8103413353791302
+[Stage 50:=============================>                            (1 + 1) / 2]Training loss at epoch 41: 1.8032484104858404
+[Stage 51:=============================>                            (1 + 1) / 2]Training loss at epoch 42: 1.798951168910686
+[Stage 52:=============================>                            (1 + 1) / 2]Training loss at epoch 43: 1.7937263960056067
+[Stage 53:=============================>                            (1 + 1) / 2]Training loss at epoch 44: 1.78746050210174
+[Stage 54:=============================>                            (1 + 1) / 2]Training loss at epoch 45: 1.7823720149051878
+[Stage 55:=============================>                            (1 + 1) / 2]Training loss at epoch 46: 1.7764965342418582
+[Stage 56:=============================>                            (1 + 1) / 2]Training loss at epoch 47: 1.7717716061078488
+[Stage 57:=============================>                            (1 + 1) / 2]Training loss at epoch 48: 1.7663851141087974
+[Stage 58:=============================>                            (1 + 1) / 2]Training loss at epoch 49: 1.7617114008403438
+[Stage 59:=============================>                            (1 + 1) / 2]Training loss at epoch 50: 1.756661872064087
+[Stage 60:=============================>                            (1 + 1) / 2]Training loss at epoch 51: 1.7516580788935565
+[Stage 61:=============================>                            (1 + 1) / 2]Training loss at epoch 52: 1.7466390491726138
+Training loss at epoch 53: 1.742394366819153
+Training loss at epoch 54: 1.7368015649826845
+[Stage 64:=============================>                            (1 + 1) / 2]Training loss at epoch 55: 1.7326232110293587
+[Stage 65:=============================>                            (1 + 1) / 2]Training loss at epoch 56: 1.7282153285646562
+Training loss at epoch 57: 1.7235689540864167
+[Stage 67:>                                                         (0 + 2) / 2]Training loss at epoch 58: 1.7190893870116088
+Training loss at epoch 59: 1.715561352681276
+Training loss at epoch 60: 1.711483810413832
+[Stage 70:=============================>                            (1 + 1) / 2]Training loss at epoch 61: 1.7079343931487143
+[Stage 71:=============================>                            (1 + 1) / 2]Training loss at epoch 62: 1.7037777032457178
+[Stage 72:=============================>                            (1 + 1) / 2]Training loss at epoch 63: 1.6996221642017209
+[Stage 73:=============================>                            (1 + 1) / 2]Training loss at epoch 64: 1.6943851026986088
+[Stage 74:=============================>                            (1 + 1) / 2]Training loss at epoch 65: 1.6907997488028361
+Training loss at epoch 66: 1.6874501949321148
+[Stage 76:=============================>                            (1 + 1) / 2]Training loss at epoch 67: 1.6823098128022775
+[Stage 77:=============================>                            (1 + 1) / 2]Training loss at epoch 68: 1.678211451348808
+[Stage 78:=============================>                            (1 + 1) / 2]Training loss at epoch 69: 1.675664624710372
+[Stage 79:=============================>                            (1 + 1) / 2]Training loss at epoch 70: 1.6734959601008799
+[Stage 80:=============================>                            (1 + 1) / 2]Training loss at epoch 71: 1.669660213927871
+[Stage 81:=============================>                            (1 + 1) / 2]Training loss at epoch 72: 1.6665816724779656
+[Stage 82:=============================>                            (1 + 1) / 2]Training loss at epoch 73: 1.6631113420710921
+[Stage 83:=============================>                            (1 + 1) / 2]Training loss at epoch 74: 1.6591618415500142
+[Stage 84:=============================>                            (1 + 1) / 2]Training loss at epoch 75: 1.655786170940324
+[Stage 85:=============================>                            (1 + 1) / 2]Training loss at epoch 76: 1.6525202171711089
+Training loss at epoch 77: 1.648389650373101
+Training loss at epoch 78: 1.645133530645237
+[Stage 88:=============================>                            (1 + 1) / 2]Training loss at epoch 79: 1.6421310577067496
+[Stage 89:=============================>                            (1 + 1) / 2]Training loss at epoch 80: 1.6392527280622693
+[Stage 90:=============================>                            (1 + 1) / 2]Training loss at epoch 81: 1.6355986653539456
+Training loss at epoch 82: 1.631584183114142
+[Stage 92:=============================>                            (1 + 1) / 2]Training loss at epoch 83: 1.6273367806078787
+[Stage 93:=============================>                            (1 + 1) / 2]Training loss at epoch 84: 1.6238932201027052
+[Stage 94:=============================>                            (1 + 1) / 2]Training loss at epoch 85: 1.6202200588124451
+[Stage 95:=============================>                            (1 + 1) / 2]Training loss at epoch 86: 1.6166571284254565
+[Stage 96:=============================>                            (1 + 1) / 2]Training loss at epoch 87: 1.6135559194850944
+[Stage 97:=============================>                            (1 + 1) / 2]Training loss at epoch 88: 1.6107662096018784
+[Stage 98:=============================>                            (1 + 1) / 2]Training loss at epoch 89: 1.608279805520678
+[Stage 99:=============================>                            (1 + 1) / 2]Training loss at epoch 90: 1.6046468375779233
+[Stage 100:============================>                            (1 + 1) / 2]Training loss at epoch 91: 1.6014253929917963
+[Stage 101:============================>                            (1 + 1) / 2]Training loss at epoch 92: 1.5977935530705252
+[Stage 102:============================>                            (1 + 1) / 2]Training loss at epoch 93: 1.5946858045553798
+[Stage 103:============================>                            (1 + 1) / 2]Training loss at epoch 94: 1.5918947246357826
+[Stage 104:============================>                            (1 + 1) / 2]Training loss at epoch 95: 1.5898123535909607
+Training loss at epoch 96: 1.5876765594927338
+[Stage 106:============================>                            (1 + 1) / 2]Training loss at epoch 97: 1.5859367569278522
+Training loss at epoch 98: 1.5829617646530028
+[Stage 108:============================>                            (1 + 1) / 2]Training loss at epoch 99: 1.5800057781819254
+[Stage 109:============================>                            (1 + 1) / 2]Training loss at epoch 100: 1.5776178226923747
+[Stage 110:============================>                            (1 + 1) / 2]Training loss at epoch 101: 1.5749654056709483
+Training loss at epoch 102: 1.5727695999817275
+Training loss at epoch 103: 1.5703582863586698
+[Stage 113:============================>                            (1 + 1) / 2]Training loss at epoch 104: 1.567615326463019
+[Stage 114:============================>                            (1 + 1) / 2]Training loss at epoch 105: 1.5668085923570132
+[Stage 115:============================>                            (1 + 1) / 2]Training loss at epoch 106: 1.564184662998207
+[Stage 116:============================>                            (1 + 1) / 2]Training loss at epoch 107: 1.5619674740899323
+[Stage 117:============================>                            (1 + 1) / 2]Training loss at epoch 108: 1.5593297067890777
+Training loss at epoch 109: 1.5558735146043912
+[Stage 119:============================>                            (1 + 1) / 2]Training loss at epoch 110: 1.5540525754179537
+[Stage 120:============================>                            (1 + 1) / 2]Training loss at epoch 111: 1.5517738664251477
+Training loss at epoch 112: 1.5486898139538376
+[Stage 122:============================>                            (1 + 1) / 2]Training loss at epoch 113: 1.5457167891158152
+[Stage 123:============================>                            (1 + 1) / 2]Training loss at epoch 114: 1.5435854149537767
+[Stage 124:============================>                            (1 + 1) / 2]Training loss at epoch 115: 1.5422990004069876
+[Stage 125:============================>                            (1 + 1) / 2]Training loss at epoch 116: 1.5408945559476281
+[Stage 126:============================>                            (1 + 1) / 2]Training loss at epoch 117: 1.5398204410947383
+Training loss at epoch 118: 1.5381893704192915
+[Stage 128:============================>                            (1 + 1) / 2]Training loss at epoch 119: 1.5364702804689718
+[Stage 129:============================>                            (1 + 1) / 2]Training loss at epoch 120: 1.5332339797996588
+[Stage 130:============================>                            (1 + 1) / 2]Training loss at epoch 121: 1.530028466089336
+[Stage 131:============================>                            (1 + 1) / 2]Training loss at epoch 122: 1.5275284072860575
+[Stage 132:============================>                            (1 + 1) / 2]Training loss at epoch 123: 1.5249110632863447
+Training loss at epoch 124: 1.5216634221809575
+[Stage 134:============================>                            (1 + 1) / 2]Training loss at epoch 125: 1.5188034985225127
+Training loss at epoch 126: 1.5159367293444372
+Training loss at epoch 127: 1.512994518045777
+[Stage 137:>                                                        (0 + 2) / 2]Training loss at epoch 128: 1.5110226995892972
+[Stage 138:============================>                            (1 + 1) / 2]Training loss at epoch 129: 1.5092904048633913
+[Stage 139:============================>                            (1 + 1) / 2]Training loss at epoch 130: 1.5069182144325743
+Training loss at epoch 131: 1.504732880400302
+Training loss at epoch 132: 1.5027165969672636
+[Stage 142:============================>                            (1 + 1) / 2]Training loss at epoch 133: 1.5000527468270375
+[Stage 143:============================>                            (1 + 1) / 2]Training loss at epoch 134: 1.4978783692420148
+Training loss at epoch 135: 1.496329921059448
+[Stage 145:============================>                            (1 + 1) / 2]Training loss at epoch 136: 1.4951266218679118
+[Stage 146:============================>                            (1 + 1) / 2]Training loss at epoch 137: 1.49380638001897
+[Stage 147:============================>                            (1 + 1) / 2]Training loss at epoch 138: 1.4922364239034331
+[Stage 148:============================>                            (1 + 1) / 2]Training loss at epoch 139: 1.4907767511948768
+[Stage 149:============================>                            (1 + 1) / 2]Training loss at epoch 140: 1.4896045794976633
+Training loss at epoch 141: 1.4880004382233296
+Training loss at epoch 142: 1.486292385447056
+[Stage 152:============================>                            (1 + 1) / 2]Training loss at epoch 143: 1.4841298734130777
+[Stage 153:============================>                            (1 + 1) / 2]Training loss at epoch 144: 1.4817763474503107
+[Stage 154:============================>                            (1 + 1) / 2]Training loss at epoch 145: 1.4802799627750067
+[Stage 155:============================>                            (1 + 1) / 2]Training loss at epoch 146: 1.4789771480991303
+Training loss at epoch 147: 1.4762889223721076
+Training loss at epoch 148: 1.4745035914473108
+[Stage 158:============================>                            (1 + 1) / 2]Training loss at epoch 149: 1.4721663797237006
+Training loss at epoch 150: 1.4700620383466232
+[Stage 160:============================>                            (1 + 1) / 2]Training loss at epoch 151: 1.4677836641875828
+[Stage 161:============================>                            (1 + 1) / 2]Training loss at epoch 152: 1.465604726144713
+Training loss at epoch 153: 1.46359889679365
+[Stage 163:============================>                            (1 + 1) / 2]Training loss at epoch 154: 1.4620690908529463
+Training loss at epoch 155: 1.4604361117100575
+[Stage 165:============================>                            (1 + 1) / 2]Training loss at epoch 156: 1.4580920710037886
+[Stage 166:============================>                            (1 + 1) / 2]Training loss at epoch 157: 1.4562139475161502
+Training loss at epoch 158: 1.4539275580290805
+[Stage 168:============================>                            (1 + 1) / 2]Training loss at epoch 159: 1.4523152244903434
+Training loss at epoch 160: 1.4506418970488317
+[Stage 170:============================>                            (1 + 1) / 2]Training loss at epoch 161: 1.4495932730915093
+Training loss at epoch 162: 1.44753765194455
+[Stage 172:============================>                            (1 + 1) / 2]Training loss at epoch 163: 1.445721413191413
+[Stage 173:============================>                            (1 + 1) / 2]Training loss at epoch 164: 1.4436498110848957
+Training loss at epoch 165: 1.4417417298505548
+[Stage 175:============================>                            (1 + 1) / 2]Training loss at epoch 166: 1.4404121681215158
+[Stage 176:============================>                            (1 + 1) / 2]Training loss at epoch 167: 1.4386813870072752
+Training loss at epoch 168: 1.437243776776697
+Training loss at epoch 169: 1.435970779892383
+Training loss at epoch 170: 1.4350471755099903
+[Stage 180:============================>                            (1 + 1) / 2]Training loss at epoch 171: 1.433908805646334
+[Stage 181:============================>                            (1 + 1) / 2]Training loss at epoch 172: 1.4328663393700027
+[Stage 182:============================>                            (1 + 1) / 2]Training loss at epoch 173: 1.431092182679746
+[Stage 183:============================>                            (1 + 1) / 2]Training loss at epoch 174: 1.4287260580699774
+[Stage 184:============================>                            (1 + 1) / 2]Training loss at epoch 175: 1.4267962674700292
+[Stage 185:============================>                            (1 + 1) / 2]Training loss at epoch 176: 1.4249383947511436
+[Stage 186:============================>                            (1 + 1) / 2]Training loss at epoch 177: 1.423481049048665
+[Stage 187:============================>                            (1 + 1) / 2]Training loss at epoch 178: 1.4216190486534568
+[Stage 188:============================>                            (1 + 1) / 2]Training loss at epoch 179: 1.4192823760466164
+Training loss at epoch 180: 1.4181991401627703
+Training loss at epoch 181: 1.417144398599761
+[Stage 191:============================>                            (1 + 1) / 2]Training loss at epoch 182: 1.4158655874583657
+[Stage 192:============================>                            (1 + 1) / 2]Training loss at epoch 183: 1.414821435927962
+[Stage 193:============================>                            (1 + 1) / 2]Training loss at epoch 184: 1.4140667858327922
+[Stage 194:============================>                            (1 + 1) / 2]Training loss at epoch 185: 1.4128148431988716
+[Stage 195:============================>                            (1 + 1) / 2]Training loss at epoch 186: 1.4115086901383245
+Training loss at epoch 187: 1.4105005954474101
+[Stage 197:============================>                            (1 + 1) / 2]Training loss at epoch 188: 1.4092924684983674
+[Stage 198:============================>                            (1 + 1) / 2]Training loss at epoch 189: 1.4075486711091556
+[Stage 199:============================>                            (1 + 1) / 2]Training loss at epoch 190: 1.406495602492611
+[Stage 200:============================>                            (1 + 1) / 2]Training loss at epoch 191: 1.405942444476897
+Training loss at epoch 192: 1.4047080823517852
+Training loss at epoch 193: 1.403249561345505
+[Stage 203:============================>                            (1 + 1) / 2]Training loss at epoch 194: 1.4016880034695773
+[Stage 204:============================>                            (1 + 1) / 2]Training loss at epoch 195: 1.4010522990426748
+[Stage 205:============================>                            (1 + 1) / 2]Training loss at epoch 196: 1.4009370110299995
+[Stage 206:============================>                            (1 + 1) / 2]Training loss at epoch 197: 1.400418209989742
+[Stage 207:============================>                            (1 + 1) / 2]Training loss at epoch 198: 1.3996043883030367
+[Stage 208:============================>                            (1 + 1) / 2]Training loss at epoch 199: 1.398033646864979
+Training loss at epoch 200: 1.3964493973653072
+Training loss at epoch 201: 1.3946861857937654
+[Stage 211:============================>                            (1 + 1) / 2]Training loss at epoch 202: 1.3914256542657333
+Training loss at epoch 203: 1.3891586848818038
+[Stage 213:============================>                            (1 + 1) / 2]Training loss at epoch 204: 1.3869503872427082
+[Stage 214:>                                                        (0 + 2) / 2]Exception in thread "main" org.apache.spark.SparkException: Job 210 cancelled because SparkContext was shut down
+	at org.apache.spark.scheduler.DAGScheduler$$anonfun$cleanUpAfterSchedulerStop$1.apply(DAGScheduler.scala:806)
+	at org.apache.spark.scheduler.DAGScheduler$$anonfun$cleanUpAfterSchedulerStop$1.apply(DAGScheduler.scala:804)
+	at scala.collection.mutable.HashSet.foreach(HashSet.scala:78)
+	at org.apache.spark.scheduler.DAGScheduler.cleanUpAfterSchedulerStop(DAGScheduler.scala:804)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onStop(DAGScheduler.scala:1658)
+	at org.apache.spark.util.EventLoop.stop(EventLoop.scala:84)
+	at org.apache.spark.scheduler.DAGScheduler.stop(DAGScheduler.scala:1581)
+	at org.apache.spark.SparkContext$$anonfun$stop$9.apply$mcV$sp(SparkContext.scala:1740)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1229)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:1739)
+	at org.apache.spark.SparkContext$$anonfun$3.apply$mcV$sp(SparkContext.scala:596)
+	at org.apache.spark.util.SparkShutdownHook.run(ShutdownHookManager.scala:267)
+	at org.apache.spark.util.SparkShutdownHookManager$$anonfun$runAll$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(ShutdownHookManager.scala:239)
+	at org.apache.spark.util.SparkShutdownHookManager$$anonfun$runAll$1$$anonfun$apply$mcV$sp$1.apply(ShutdownHookManager.scala:239)
+	at org.apache.spark.util.SparkShutdownHookManager$$anonfun$runAll$1$$anonfun$apply$mcV$sp$1.apply(ShutdownHookManager.scala:239)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1765)
+	at org.apache.spark.util.SparkShutdownHookManager$$anonfun$runAll$1.apply$mcV$sp(ShutdownHookManager.scala:239)
+	at org.apache.spark.util.SparkShutdownHookManager$$anonfun$runAll$1.apply(ShutdownHookManager.scala:239)
+	at org.apache.spark.util.SparkShutdownHookManager$$anonfun$runAll$1.apply(ShutdownHookManager.scala:239)
+	at scala.util.Try$.apply(Try.scala:192)
+	at org.apache.spark.util.SparkShutdownHookManager.runAll(ShutdownHookManager.scala:239)
+	at org.apache.spark.util.SparkShutdownHookManager$$anon$2.run(ShutdownHookManager.scala:218)
+	at org.apache.hadoop.util.ShutdownHookManager$1.run(ShutdownHookManager.java:54)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:620)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:1832)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:1952)
+	at org.apache.spark.rdd.RDD$$anonfun$reduce$1.apply(RDD.scala:1025)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:150)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:111)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:316)
+	at org.apache.spark.rdd.RDD.reduce(RDD.scala:1007)
+	at org.apache.spark.shallowNN.char_RNN_dist_para$char_RNN.fit(char_RNN_dist_para.scala:392)
+	at org.apache.spark.shallowNN.char_RNN_dist_para$.main(char_RNN_dist_para.scala:450)
+	at org.apache.spark.shallowNN.char_RNN_dist_para.main(char_RNN_dist_para.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
+16/06/01 01:10:57 ERROR LiveListenerBus: SparkListenerBus has already stopped! Dropping event SparkListenerStageCompleted(org.apache.spark.scheduler.StageInfo@45bbacb4)
+16/06/01 01:10:57 ERROR LiveListenerBus: SparkListenerBus has already stopped! Dropping event SparkListenerJobEnd(210,1464768657267,JobFailed(org.apache.spark.SparkException: Job 210 cancelled because SparkContext was shut down))
+
+Process finished with exit code 130
+
