@@ -19,7 +19,8 @@ object char_RNN_dist_para {
                  val seq_len: Int = 25,
                  val learn_rate: Double = 0.1,
                  val lim: Double = 5.0,
-                 val iter: Int = 1)
+                 val iter: Int = 1,
+                 val num_epoch: Int = 100)
     extends Serializable {
 
     // Constructor of character RNN class
@@ -388,8 +389,8 @@ object char_RNN_dist_para {
       val train_para = input.map(p => p.toCharArray.map(c => char2id(c))).filter(_.size > 0)
 
       // training loop
-      while (epoch >= 0) {
-        val paras = train_para.map(p => train_paragraph(p)).reduce{
+      while (epoch <= num_epoch) {
+        val paras = train_para.filter(_ => Random.nextFloat() > 0.9999).map(p => train_paragraph(p)).reduce{
           case (x, y) => (x._1 + y._1,
             (x._2).zip(y._2).map{case (a, b) => a + b},
             (x._3).zip(y._3).map{case (a, b) => a + b},
@@ -418,7 +419,7 @@ object char_RNN_dist_para {
         mbout = mbout_n.map(_ / ct)
         mbh = mbh_n.map(_ / ct)
 
-        println(s"Training loss at epoch $epoch: ${loss / len}")
+        println(s"Training loss at epoch $epoch: ${loss / len} with iter $iter")
         //val h_kickoff = Array.fill(num_layers){DenseVector.rand[Double](hidden_dim)}
         //println(transform(0 , h_kickoff, 500).mkString("") + "\n")
 
@@ -436,18 +437,23 @@ object char_RNN_dist_para {
     val spark = new SparkContext(conf)
 
     // read input corpus
-    //val data = spark.textFile("min-char-rnn-test.txt")
-    val data = spark.textFile("life_is_short.txt")
+    //val data = spark.textFile("life_is_short.txt")
+    val data = spark.textFile("englishText_0_10000")
 
     // create and fit char-RNN model with corpus
+    val tot_epoch: Int = 600
+    val n_iter = 1
+    println(s"Training with iter size $n_iter")
     val rnn = new char_RNN(input = data,
       num_layers = 1,
-      hidden_dim = 100,
+      hidden_dim = 25,
       seq_len = 25,
       learn_rate = 0.1,
       lim = 5.0,
-      iter = 4)
+      iter = n_iter,
+      num_epoch = tot_epoch / n_iter)
     rnn.fit()
+
 
   }
 }

@@ -293,7 +293,6 @@ object char_RNN_module {
     val spark = new SparkContext(conf)
 
     // read input corpus
-    //val data = spark.textFile("min-char-rnn-test.txt")
     val data = spark.textFile("life_is_short.txt")
 
     // create and fit char-RNN model with corpus

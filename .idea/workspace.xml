@@ -2,7 +2,121 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="545df014-7ea6-4ee2-bfcb-e3f2f4078ce6" name="Default" comment="2-layers RNN working">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/life_is_short-tiny.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/life_is_short_tiny_result-early_stage.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/life_is_short_tiny_result.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/min-char-rnn-test-tiny.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/min-char-rnn-test.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module_log.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/paragraph_iter/iter10_log.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/paragraph_iter/iter1_log.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/paragraph_iter/iter20_log.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/paragraph_iter/iter2_log.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/paragraph_iter/iter3_log.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/paragraph_iter/iter4_log.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/paragraph_iter/iter5_log.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/paragraph_log.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sgd_log.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/shakespeare.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/spiral_x.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/spiral_y.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/BreezeTest.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/MatrixTest.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_2layer.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_2layer_para.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_para.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_paragraph.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/shallowNN_mllib.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$38$$anonfun$apply$10.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$38$$anonfun$apply$11.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$38$$anonfun$apply$12.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$38$$anonfun$apply$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$38$$anonfun$apply$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$38$$anonfun$apply$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$38$$anonfun$apply$6.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$38$$anonfun$apply$7.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$38$$anonfun$apply$8.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$38$$anonfun$apply$9.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tiny_tarin_log.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tiny_train_log_GD.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tiny_train_log_window.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_SGD$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_SGD$.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_SGD$char_RNN$$anonfun$24.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_SGD$char_RNN$$anonfun$24.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$10.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$11.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$11.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$12.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$12.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$13.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$13.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$14.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$14.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$15.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$15.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$16.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$16.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$17.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$17.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$18.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$18.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$19.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$19.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$20.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$20.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$21.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$21.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$22.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$22.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$23.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$23.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$24.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$24.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$25.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$25.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$26.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$26.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$27.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$27.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$28.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$28.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$29.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$29.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$30.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$30.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$31.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$31.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$32.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$32.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$33.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$33.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$35$$anonfun$apply$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$35$$anonfun$apply$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$35.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$35.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$36.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$36.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$37.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$37.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$38.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$38.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$4.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$5.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$6.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$7.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$8.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$9.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$clip$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$clip$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$clip$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$clip$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$fit$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$fit$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$fit$10.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$fit$10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$fit$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$fit$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$fit$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$fit$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$fit$4.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$fit$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$fit$5.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$fit$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$fit$6.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$fit$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$fit$7.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$fit$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$fit$8.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$fit$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$fit$9.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$fit$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$sample$1$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$sample$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$step$1$1$$anonfun$apply$mcVI$sp$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$step$1$1$$anonfun$apply$mcVI$sp$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$step$1$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$step$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$step$1$2$$anonfun$apply$mcVI$sp$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$step$1$2$$anonfun$apply$mcVI$sp$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$step$1$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$step$1$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$step$1$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$step$1$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$step$1$4.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$step$1$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$step$1$5.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$step$1$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$step$1$6.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$step$1$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$step$1$7.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$step$1$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$train_paragraph$1$1$$anonfun$34.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$train_paragraph$1$1$$anonfun$34.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$train_paragraph$1$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$train_paragraph$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$update_param$1$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$org$apache$spark$shallowNN$char_RNN_dist_para$char_RNN$$update_param$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$randGaussian$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$randGaussian$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$transform$1$$anonfun$apply$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$transform$1$$anonfun$apply$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$transform$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$$anonfun$transform$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN$.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para$char_RNN.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/org/apache/spark/shallowNN/char_RNN_dist_para.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN.scala" afterPath="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_SGD.scala" afterPath="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_SGD.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_dist_para.scala" afterPath="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_dist_para.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_module.scala" afterPath="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_module.scala" />
     </list>
     <ignored path="rnn_nlp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,8 +149,8 @@
       <file leaf-file-name="char_RNN.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="201" column="17" selection-start-line="201" selection-start-column="17" selection-end-line="201" selection-end-column="17" />
+            <state relative-caret-position="702">
+              <caret line="282" column="24" selection-start-line="282" selection-start-column="24" selection-end-line="282" selection-end-column="24" />
               <folding>
                 <element signature="e#79#96#0" expanded="true" />
               </folding>
@@ -47,8 +161,8 @@
       <file leaf-file-name="char_RNN_module.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_module.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-325">
-              <caret line="145" column="51" selection-start-line="145" selection-start-column="51" selection-end-line="145" selection-end-column="51" />
+            <state relative-caret-position="596">
+              <caret line="294" column="24" selection-start-line="294" selection-start-column="24" selection-end-line="294" selection-end-column="24" />
               <folding>
                 <element signature="e#79#96#0" expanded="true" />
               </folding>
@@ -59,8 +173,8 @@
       <file leaf-file-name="char_RNN_SGD.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_SGD.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4266">
-              <caret line="306" column="0" selection-start-line="306" selection-start-column="0" selection-end-line="306" selection-end-column="0" />
+            <state relative-caret-position="552">
+              <caret line="294" column="24" selection-start-line="294" selection-start-column="24" selection-end-line="294" selection-end-column="24" />
               <folding>
                 <element signature="e#79#96#0" expanded="true" />
               </folding>
@@ -71,11 +185,11 @@
       <file leaf-file-name="char_RNN_dist_para.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_dist_para.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="448" column="14" selection-start-line="448" selection-start-column="14" selection-end-line="448" selection-end-column="14" />
+            <state relative-caret-position="444">
+              <caret line="438" column="24" selection-start-line="438" selection-start-column="24" selection-end-line="438" selection-end-column="24" />
               <folding>
                 <element signature="e#36#53#0" expanded="true" />
-                <element signature="e#4966#6930#0" expanded="false" />
+                <element signature="e#5009#6973#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -102,18 +216,18 @@
         <option value="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_paragraph.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_2layer_para.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_2layer.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_module.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_SGD.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_module.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_dist_para.scala" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="-4" />
+    <option name="y" value="24" />
     <option name="width" value="1855" />
-    <option name="height" value="1084" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -740,7 +854,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -752,7 +866,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5041459" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32916668" sideWeight="0.49585405" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.49585405" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -798,9 +912,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2034">
           <caret line="116" column="72" selection-start-line="116" selection-start-column="72" selection-end-line="116" selection-end-column="72" />
-          <folding>
-            <element signature="e#79#96#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -818,7 +929,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -826,9 +936,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2376">
           <caret line="139" column="7" selection-start-line="139" selection-start-column="7" selection-end-line="139" selection-end-column="7" />
-          <folding>
-            <element signature="e#79#96#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -836,9 +943,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#79#96#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -846,7 +950,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -854,9 +957,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2034">
           <caret line="116" column="72" selection-start-line="116" selection-start-column="72" selection-end-line="116" selection-end-column="72" />
-          <folding>
-            <element signature="e#79#96#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -874,9 +974,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#79#96#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -884,9 +981,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#79#96#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -894,7 +988,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -902,9 +995,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2034">
           <caret line="116" column="72" selection-start-line="116" selection-start-column="72" selection-end-line="116" selection-end-column="72" />
-          <folding>
-            <element signature="e#79#96#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -922,9 +1012,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#79#96#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -932,7 +1019,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -940,9 +1026,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2034">
           <caret line="116" column="72" selection-start-line="116" selection-start-column="72" selection-end-line="116" selection-end-column="72" />
-          <folding>
-            <element signature="e#79#96#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -960,9 +1043,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#79#96#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -970,7 +1050,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -978,9 +1057,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2034">
           <caret line="116" column="72" selection-start-line="116" selection-start-column="72" selection-end-line="116" selection-end-column="72" />
-          <folding>
-            <element signature="e#79#96#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -998,9 +1074,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#79#96#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1008,7 +1081,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1016,9 +1088,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2034">
           <caret line="116" column="72" selection-start-line="116" selection-start-column="72" selection-end-line="116" selection-end-column="72" />
-          <folding>
-            <element signature="e#79#96#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1036,9 +1105,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#79#96#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1046,7 +1112,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1054,9 +1119,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2034">
           <caret line="116" column="72" selection-start-line="116" selection-start-column="72" selection-end-line="116" selection-end-column="72" />
-          <folding>
-            <element signature="e#79#96#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1074,9 +1136,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#79#96#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1084,7 +1143,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1092,9 +1150,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3636">
           <caret line="205" column="5" selection-start-line="205" selection-start-column="5" selection-end-line="205" selection-end-column="5" />
-          <folding>
-            <element signature="e#79#96#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1112,9 +1167,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#79#96#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1122,7 +1174,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1130,9 +1181,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#79#96#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1140,9 +1188,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="29" column="35" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="35" />
-          <folding>
-            <element signature="e#79#96#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1150,7 +1195,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="22" column="86" selection-start-line="18" selection-start-column="4" selection-end-line="22" selection-end-column="86" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1158,9 +1202,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#79#96#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1169,17 +1210,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#79#96#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/shallowNN_mllib.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1187,9 +1217,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2141">
           <caret line="266" column="50" selection-start-line="266" selection-start-column="50" selection-end-line="266" selection-end-column="50" />
-          <folding>
-            <element signature="e#79#96#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1197,7 +1224,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6048">
           <caret line="342" column="48" selection-start-line="342" selection-start-column="48" selection-end-line="342" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1205,9 +1231,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="536">
           <caret line="36" column="94" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="94" />
-          <folding>
-            <element signature="e#79#96#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1215,34 +1238,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5562">
           <caret line="309" column="49" selection-start-line="309" selection-start-column="49" selection-end-line="309" selection-end-column="49" />
-          <folding>
-            <element signature="e#79#96#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_SGD.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/shallowNN_mllib.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4266">
-          <caret line="306" column="0" selection-start-line="306" selection-start-column="0" selection-end-line="306" selection-end-column="0" />
-          <folding>
-            <element signature="e#79#96#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="252">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/MatrixTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2346">
-          <caret line="116" column="72" selection-start-line="116" selection-start-column="72" selection-end-line="116" selection-end-column="72" />
+        <state relative-caret-position="4374">
+          <caret line="246" column="28" selection-start-line="246" selection-start-column="28" selection-end-line="246" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_module.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-325">
-          <caret line="145" column="51" selection-start-line="145" selection-start-column="51" selection-end-line="145" selection-end-column="51" />
+        <state relative-caret-position="596">
+          <caret line="294" column="24" selection-start-line="294" selection-start-column="24" selection-end-line="294" selection-end-column="24" />
           <folding>
             <element signature="e#79#96#0" expanded="true" />
           </folding>
@@ -1251,8 +1268,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="201" column="17" selection-start-line="201" selection-start-column="17" selection-end-line="201" selection-end-column="17" />
+        <state relative-caret-position="702">
+          <caret line="282" column="24" selection-start-line="282" selection-start-column="24" selection-end-line="282" selection-end-column="24" />
+          <folding>
+            <element signature="e#79#96#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_SGD.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="294" column="24" selection-start-line="294" selection-start-column="24" selection-end-line="294" selection-end-column="24" />
           <folding>
             <element signature="e#79#96#0" expanded="true" />
           </folding>
@@ -1261,11 +1288,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/shallowNN/char_RNN_dist_para.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="448" column="14" selection-start-line="448" selection-start-column="14" selection-end-line="448" selection-end-column="14" />
+        <state relative-caret-position="444">
+          <caret line="438" column="24" selection-start-line="438" selection-start-column="24" selection-end-line="438" selection-end-column="24" />
           <folding>
             <element signature="e#36#53#0" expanded="true" />
-            <element signature="e#4966#6930#0" expanded="false" />
+            <element signature="e#5009#6973#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -258,7 +258,7 @@ object char_RNN_SGD {
 
       while (epoch >= 0) {
         val h_init = Array.fill(num_layers){DenseVector.zeros[Double](hidden_dim)}
-        val gradient_seq = train2id.filter(_ => Random.nextFloat() > 0.9).map(window => step(window, h_init))
+        val gradient_seq = train2id.filter(_ => Random.nextFloat() > 0.999995).map(window => step(window, h_init))
         val gradients = gradient_seq.reduce{
           case (x, y) =>
             (x._1 + y._1,
@@ -293,14 +293,14 @@ object char_RNN_SGD {
     val spark = new SparkContext(conf)
 
     // read input corpus
-    //val data = spark.textFile("min-char-rnn-test.txt")
-    val data = spark.textFile("life_is_short.txt")
+    //val data = spark.textFile("life_is_short.txt")
+    val data = spark.textFile("englishText_0_10000")
 
     // create and fit char-RNN model with corpus
     val rnn = new char_RNN(input = data,
       num_layers = 1,
       hidden_dim = 25,
-      seq_len = 5,
+      seq_len = 25,
       learn_rate = 0.2,
       lim = 5.0)
     rnn.fit()
