@@ -1,0 +1,2 @@
+## Recurrent Neural Network on Spark
+This project implements Recurrent Neural Network (RNN) on Spark with Scala. The project is from Stanford's course CME323 *Distributed Algorithms and Optimization*. Project report can be found from [here](http://stanford.edu/~rezab/dao/projects_reports/narayan_lee.pdf).
